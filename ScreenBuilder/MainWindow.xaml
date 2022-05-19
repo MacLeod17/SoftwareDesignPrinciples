@@ -1,0 +1,44 @@
+﻿<Window x:Class="ScreenBuilder.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ScreenBuilder"
+        mc:Ignorable="d"
+        Title="Screen Builder" Height="450" Width="800">
+    <Grid Margin="20" Background="LightBlue">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0" Margin="10" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+
+            <ComboBox x:Name="outputLanguage" Margin="10" SelectedValuePath="Content" SelectedIndex="0">
+                <ComboBoxItem x:Name="txtHTML">HTML</ComboBoxItem>
+                <ComboBoxItem x:Name="txtXAML">XAML</ComboBoxItem>
+            </ComboBox>
+            
+            <TextBlock Margin="5" HorizontalAlignment="Center">Content</TextBlock>
+            <TextBox Width="200" x:Name="txtContent"></TextBox>
+            
+            <TextBlock Margin="5" HorizontalAlignment="Center">Height</TextBlock>
+            <TextBox Width="200" x:Name="txtHeight" PreviewTextInput="textBox_PreviewTextInput">0</TextBox>
+            
+            <TextBlock Margin="5" HorizontalAlignment="Center">Width</TextBlock>
+            <TextBox Width="200" x:Name="txtWidth" PreviewTextInput="textBox_PreviewTextInput">0</TextBox>
+            
+            <TextBlock Margin="5" HorizontalAlignment="Center">Top</TextBlock>
+            <TextBox Width="200" x:Name="txtTop" PreviewTextInput="textBox_PreviewTextInput">0</TextBox>
+            
+            <TextBlock Margin="5" HorizontalAlignment="Center">Left</TextBlock>
+            <TextBox Width="200" x:Name="txtLeft" PreviewTextInput="textBox_PreviewTextInput">0</TextBox>
+            
+            <Button Height="25" Width="200" Margin="5 10 5 5" x:Name="btnAddTextBlock" Click="btnAddTextBlock_Click">Add Text Block</Button>
+            <Button Height="25" Width="200" Margin="5" x:Name="btnAddButton" Click="btnAddButton_Click">Add Button</Button>
+            <Button Height="25" Width="200" Margin="5" x:Name="btnRemoveElement" Click="btnRemoveElement_Click">Remove Last Element</Button>
+        </StackPanel>
+        <StackPanel Grid.Column="1" Margin="10" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <TextBlock Margin="20 15" Height="335" x:Name="txtOutput" Background="White">Bruh</TextBlock>
+        </StackPanel>
+    </Grid>
+</Window>
